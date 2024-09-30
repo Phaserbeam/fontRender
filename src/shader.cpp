@@ -72,7 +72,7 @@ void Shader::shaders(std::string vertexPath, std::string fragmentPath)
     }
     glDeleteShader(vertex);
     glDeleteShader(fragment);
-    glUseProgram(shader);
+    //glUseProgram(shader);
 }
 
 void Shader::use() const
@@ -106,6 +106,6 @@ void Shader::setVec3(const std::string &name, const glm::vec3 &val) const
 
 void Shader::setMat4(const std::string &name, const glm::mat4 &val) const
 {
-    use();
+    //use();
     glUniformMatrix4fv(glGetUniformLocation(shader, name.c_str()), 1, GL_FALSE, &val[0][0]);
 }

@@ -1,17 +1,21 @@
 #include "curve.h"
 #include <iostream>
 
-Curve::Curve(std::vector<float> vertices)
+Curve::Curve()
+{
+    manager.newAttribute(3);
+}
+void Curve::bindPoints(std::vector<float> vertices)
 {
     points = vertices;
-}
-void Curve::bindPoints()
-{
     manager.bindData(points);
 }
 
 void Curve::render()
 {
-    shader.use();
     manager.render();
+}
+void Curve::setShader(unsigned int id)
+{
+    shaderID = id;
 }

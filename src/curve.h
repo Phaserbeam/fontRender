@@ -6,13 +6,13 @@
 class Curve
 {
 public:
-    Curve(std::vector<float>);
-    void bindPoints();
+    unsigned int shaderID;
+    Curve();
+    void bindPoints(std::vector<float>);
+    void setShader(unsigned int);
     void render();
     std::vector<float> points;
-    Shader shader;
     Object manager;
-
 private:
 };
 #endif

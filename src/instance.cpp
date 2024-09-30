@@ -92,3 +92,17 @@ glm::mat4 Instance::getProjection()
 {
     return glm::perspective(camera.fov, dimensions.aspectRatio(), 0.1f, 100.0f);
 }
+void Instance::addShader(unsigned int id)
+{
+    std::cout << "Shader Added: " << id << '\n';
+    customShaders.push_back(id);
+}
+void Instance::useShader(unsigned int id)
+{
+    glUseProgram(customShaders[id]);
+}
+
+void Instance::defaultScene(unsigned int id)
+{
+
+}
